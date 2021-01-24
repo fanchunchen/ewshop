@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class="goods-list-item">
+  <div class="goods-list-item" @click="goDetail">
     <img class="img" @load="imgLoad" v-lazy="product.cover_url" alt="" />
     <p>{{ product.title }}</p>
     <span class="price">¥{{ product.price }}</span
@@ -34,6 +34,9 @@ export default {
         this.$bus.$emit("imgLoad");
         this.isLoad = true;
       }
+    },
+    goDetail(id) {
+      this.$router.push({ path: "/detail", query: { id: this.product.id } });
     }
   },
   components: {}

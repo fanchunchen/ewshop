@@ -38,6 +38,7 @@
         >
           <div class="goods">
             <van-card
+              @click="goDetail(item.id)"
               v-for="item in goods[currentOrder].list"
               :key="item.id"
               :num="item.collects_count"
@@ -138,6 +139,9 @@ export default {
         this.$refs.scroll.finishPullUp();
         this.$refs.scroll.refresh();
       });
+    },
+    goDetail(id) {
+      this.$router.push({ path: "/detail", query: { id } });
     }
   },
   components: { NavBar, Scroll }

@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { Swipe, SwipeItem, Tabbar, TabbarItem, Lazyload,Sidebar, SidebarItem,Collapse, CollapseItem, Tab, Tabs,Card  } from "vant";
+import { Swipe, SwipeItem, Tabbar, TabbarItem, Lazyload,Sidebar, SidebarItem,Collapse, CollapseItem, Tab, Tabs,Card,Tag,Button,Image as VanImage } from "vant";
 
 Vue.use(Swipe);
 Vue.use(SwipeItem);
@@ -15,3 +15,6 @@ Vue.use(CollapseItem);
 Vue.use(Tab);
 Vue.use(Tabs);
 Vue.use(Card);
+Vue.use(Tag);
+Vue.use(Button);
+Vue.use(VanImage);
