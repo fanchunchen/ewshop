@@ -1,5 +1,25 @@
 import Vue from "vue";
-import { Swipe, SwipeItem, Tabbar, TabbarItem, Lazyload,Sidebar, SidebarItem,Collapse, CollapseItem, Tab, Tabs,Card,Tag,Button,Image as VanImage } from "vant";
+import {
+  Swipe,
+  SwipeItem,
+  Tabbar,
+  TabbarItem,
+  Lazyload,
+  Sidebar,
+  SidebarItem,
+  Collapse,
+  CollapseItem,
+  Tab,
+  Tabs,
+  Card,
+  Tag,
+  Button,
+  Image as VanImage,
+  Form,
+  Field,
+  Notify,
+  Toast
+} from "vant";
 
 Vue.use(Swipe);
 Vue.use(SwipeItem);
@@ -18,3 +38,8 @@ Vue.use(Card);
 Vue.use(Tag);
 Vue.use(Button);
 Vue.use(VanImage);
+Vue.use(Form);
+
+Vue.use(Field);
+Vue.use(Notify);
+Vue.use(Toast);

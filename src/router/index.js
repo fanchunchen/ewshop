@@ -2,7 +2,12 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
-
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location, onResolve, onReject) {
+  if (onResolve || onReject)
+    return originalPush.call(this, location, onResolve, onReject);
+  return originalPush.call(this, location).catch(err => err);
+};
 const routes = [
   { path: "/", redirect: "/home" },
   {
@@ -44,6 +49,22 @@ const routes = [
       title: "图书兄弟-图书详情"
     },
     component: () => import("@/views/detail/Detail")
+  },
+  {
+    path: "/register",
+    name: "Register",
+    meta: {
+      title: "注册账号"
+    },
+    component: () => import("@/views/profile/Register")
+  },
+  {
+    path: "/login",
+    name: "Login",
+    meta: {
+      title: "登录"
+    },
+    component: () => import("@/views/profile/Login")
   }
 ];
 
@@ -53,6 +74,17 @@ const router = new VueRouter({
   routes
 });
 router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem("token");
+  if (to.path === "/cart" || to.path === "/profile") {
+    if (!token) {
+      Vue.prototype.$toast("请先登录");
+      setTimeout(() => {
+        next("/login");
+      }, 1000);
+    }
+    next();
+  }
+
   next();
   document.title = to.meta.title;
 });
