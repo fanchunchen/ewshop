@@ -18,7 +18,7 @@ import {
   Form,
   Field,
   Notify,
-  Toast
+  Toast,Badge, Checkbox, CheckboxGroup, SubmitBar,Stepper,SwipeCell
 } from "vant";
 
 Vue.use(Swipe);
@@ -43,3 +43,9 @@ Vue.use(Form);
 Vue.use(Field);
 Vue.use(Notify);
 Vue.use(Toast);
+Vue.use(Badge);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
+Vue.use(SubmitBar);
+Vue.use(Stepper);
+Vue.use(SwipeCell);

@@ -20,8 +20,8 @@
         >
       </template>
       <template #footer>
-        <van-button type="warning">加入购物车</van-button>
-        <van-button type="danger">立刻购买</van-button>
+        <van-button type="warning" @click="addToCart">加入购物车</van-button>
+        <van-button type="danger" @click="buyNow">立刻购买</van-button>
       </template>
     </van-card>
     <tab-control @tabClick="tabClick" :titles="titles"></tab-control>
@@ -41,6 +41,7 @@ import TabControl from "@/components/content/tabcontrol/TabControl";
 import Introduce from "./ChildComps/Introduce";
 
 import { getDetailData } from "@/request/detail";
+import { AddToCart } from "@/request/cart";
 export default {
   name: "Detail",
   data() {
@@ -56,7 +57,7 @@ export default {
     // console.log(this.$route.query.id);
 
     getDetailData(this.$route.query.id).then(res => {
-      console.log(res);
+      // console.log(res);
       let { like_goods, goods } = res;
       this.goods = goods;
       this.like_goods = like_goods;
@@ -69,6 +70,25 @@ export default {
     tabClick(index) {
       // console.log(index);
       this.showBlock = index;
+    },
+    addToCart() {
+      AddToCart(this.goods.id, 1).then(res => {
+        if (res.status == 201 || res.status == 204) {
+          // console.log(res);
+          this.$toast.success("加入购物车成功");
+          this.$store.dispatch("addCart");
+        }
+      });
+    },
+    buyNow() {
+      AddToCart(this.goods.id, 1).then(res => {
+        if (res.status == 201 || res.status == 204) {
+          // console.log(res);
+
+          this.$store.dispatch("addCart");
+          this.$router.push("/cart");
+        }
+      });
     }
   },
   components: { NavBar, TabControl, GoodsList, Introduce }

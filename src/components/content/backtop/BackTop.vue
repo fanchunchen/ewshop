@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class="back-top" @click="topClick">
-    <img src="@/assets/img/top.png" alt="" />
+    <img class="img" src="@/assets/img/top.png" alt="" />
   </div>
 </template>
 
@@ -11,19 +11,21 @@ export default {
   data() {
     return {};
   },
-methods:{topClick(){
-  this.$emit('topClick')
-}},
+  methods: {
+    topClick() {
+      this.$emit("topClick");
+    }
+  },
   components: {}
 };
 </script>
 <style lang="less" scoped>
 .back-top {
-  img {
+  position: fixed;
+  right: 10px;
+  bottom: 60px;
+  .img {
     height: 48px;
-    position: fixed;
-    right: 10px;
-    bottom: 60px;
   }
 }
 </style>

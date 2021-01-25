@@ -96,6 +96,7 @@ export default {
           this.currentType = "recommend";
           break;
       }
+      this.$refs.scroll.refresh()
     },
     _getHomeGoods(type) {
       let page = this.goodsData[type].page + 1;

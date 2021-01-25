@@ -7,6 +7,10 @@
 <script>
 import TabBar from "@/components/common/tabbar/TabBar";
 export default {
+  created() {},
+  mounted() {
+    this.$store.dispatch("addCart");
+  },
   components: { TabBar }
 };
 </script>
