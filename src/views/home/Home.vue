@@ -48,14 +48,14 @@ export default {
       goodsData: {
         sales: { page: 0, list: [] },
         new: { page: 0, list: [] },
-        recommend: { page: 0, list: [] }
+        recommend: { page: 0, list: [] },
       },
       isShowBackTop: false,
-      saveY: ""
+      saveY: "",
     };
   },
   created() {
-    getHomeData().then(res => {
+    getHomeData().then((res) => {
       // console.log(res);
       let { categories, goods, slides } = res;
       this.categories = categories;
@@ -96,18 +96,18 @@ export default {
           this.currentType = "recommend";
           break;
       }
-      this.$refs.scroll.refresh()
+      this.$refs.scroll.refresh();
     },
     _getHomeGoods(type) {
       let page = this.goodsData[type].page + 1;
       getHomeGoods(type, page)
-        .then(res => {
+        .then((res) => {
           // console.log(res);
           this.goodsData[type].list.push(...res.goods.data);
           this.goodsData[type].page += 1;
           this.$refs.scroll.finishPullUp();
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
     },
@@ -122,7 +122,7 @@ export default {
     topClick() {
       // console.log(1);
       this.$refs.scroll.scrollTo(0, 0, 300);
-    }
+    },
   },
   components: {
     NavBar,
@@ -132,8 +132,8 @@ export default {
     BackTop,
 
     HomeSwiper,
-    RecommendView
-  }
+    RecommendView,
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -142,11 +142,13 @@ export default {
   position: relative;
   .content {
     overflow: hidden;
-    position: absolute;
-    top: 45px;
-    bottom: 50px;
-    left: 0;
-    right: 0;
+    margin-top:45px;
+    height: calc(100% - 95px);
+    // position: absolute;
+    // top: 45px;
+    // bottom: 50px;
+    // left: 0;
+    // right: 0;
   }
 }
 </style>

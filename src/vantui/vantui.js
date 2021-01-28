@@ -18,7 +18,22 @@ import {
   Form,
   Field,
   Notify,
-  Toast,Badge, Checkbox, CheckboxGroup, SubmitBar,Stepper,SwipeCell
+  Toast,
+  Badge,
+  Checkbox,
+  CheckboxGroup,
+  SubmitBar,
+  Stepper,
+  SwipeCell,
+  Cell,
+  AddressList,
+  AddressEdit,
+  ContactCard,
+  Icon,
+  Popup,
+  Grid,
+  GridItem,
+ 
 } from "vant";
 
 Vue.use(Swipe);
@@ -49,3 +64,11 @@ Vue.use(CheckboxGroup);
 Vue.use(SubmitBar);
 Vue.use(Stepper);
 Vue.use(SwipeCell);
+Vue.use(Cell);
+Vue.use(AddressList);
+Vue.use(AddressEdit);
+Vue.use(ContactCard);
+Vue.use(Icon);
+Vue.use(Popup);
+Vue.use(Grid);
+Vue.use(GridItem);

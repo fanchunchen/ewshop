@@ -7,3 +7,8 @@ img {
   max-width: 100% !important;
   height: auto;
 }
+html,
+body,
+#app {
+  height: 100%;
+}

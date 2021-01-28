@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div>
+  <div class="tab-bar">
     <van-tabbar route v-model="active" active-color="red">
       <van-tabbar-item icon="home-o" to="/home">首页</van-tabbar-item>
       <van-tabbar-item icon="apps-o" to="/category">分类</van-tabbar-item>
@@ -28,4 +28,10 @@ export default {
   components: {}
 };
 </script>
-<style scoped></style>
+<style lang="less" scoped>
+.tab-bar {
+  .van-tabbar {
+    z-index: 9999;
+  }
+}
+</style>

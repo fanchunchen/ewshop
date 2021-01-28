@@ -65,6 +65,46 @@ const routes = [
       title: "登录"
     },
     component: () => import("@/views/profile/Login")
+  },
+  {
+    path: "/address",
+    name: "Address",
+    meta: {
+      title: "地址管理"
+    },
+    component: () => import("@/views/address/Address")
+  },
+  {
+    path: "/editaddress",
+    name: "EditAddress",
+    meta: {
+      title: "编辑地址"
+    },
+    component: () => import("@/views/editAddress/EditAddress")
+  },
+  {
+    path: "/creatOrder",
+    name: "CreatOrder",
+    meta: {
+      title: "生成订单"
+    },
+    component: () => import("@/views/order/CreatOrder")
+  },
+  {
+    path: "/order",
+    name: "Order",
+    meta: {
+      title: "我的订单"
+    },
+    component: () => import("@/views/order/Order")
+  },
+  {
+    path: "/orderdetail",
+    name: "OrderDetail",
+    meta: {
+      title: "订单详情"
+    },
+    component: () => import("@/views/order/OrderDetail")
   }
 ];
 

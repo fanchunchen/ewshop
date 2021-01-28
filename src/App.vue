@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <keep-alive exclude="Detail"><router-view></router-view></keep-alive>
+    <!-- <keep-alive exclude="Detail EditAddress"><router-view></router-view></keep-alive> -->
+    <router-view></router-view>
     <tab-bar></tab-bar>
   </div>
 </template>

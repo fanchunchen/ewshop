@@ -103,10 +103,13 @@ export default {
         }
       });
     });
+    this.$toast.clear();
   },
 
   methods: {
-    onSubmit() {},
+    onSubmit() {
+      this.$router.push("/creatOrder");
+    },
     chxClick(item) {
       item.is_checked = item.is_checked == 1 ? 0 : 1;
       this.result = [];
